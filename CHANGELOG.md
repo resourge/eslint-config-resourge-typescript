@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.0.1...v1.1.0) (2023-10-02)
+
+
+### Features
+
+* **eslint:** change semi rule ([c1209c1](https://github.com/resourge/eslint-config-resourge-typescript/commit/c1209c14d8ad5abf13753e4d5c37b803bba35dd1))
+
 ## [1.0.1](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.0.0...v1.0.1) (2023-09-29)
 
 
