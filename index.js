@@ -118,7 +118,7 @@ module.exports = {
 		'consistent-type-definitions': 'off',
 		'@typescript-eslint/consistent-type-definitions': 'off',
 		'space-in-parens': 'off',
-		semi: 'off',
+		semi: ["error", "always"],
 		'@typescript-eslint/semi': 'off',
 		'no-trailing-spaces': 'off',
 		'@typescript-eslint/prefer-optional-chain': 'off',
