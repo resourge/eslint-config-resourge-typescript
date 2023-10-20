@@ -40,7 +40,10 @@ module.exports = {
 		}
 	],
 	rules: {
+		"@typescript-eslint/consistent-type-assertions": 0,
+		"no-return-assign": 'off',
 		'operator-linebreak': ['error', 'before'],
+		"key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
 		'no-lonely-if': 'error',
 		'no-dupe-else-if': 'error',
 		'@typescript-eslint/ban-ts-comment': [
