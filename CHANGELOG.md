@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.1.0...v1.2.0) (2023-10-24)
+
+
+### Bug Fixes
+
+* **package:** fix yarn relative path for eslint-plugin-resourge-custom-react ([168dfcf](https://github.com/resourge/eslint-config-resourge-typescript/commit/168dfcf5ff2966aa41850168503baacfb79d0f05))
+
+
+### Features
+
+* **eslint:** more rules ([1611ac0](https://github.com/resourge/eslint-config-resourge-typescript/commit/1611ac0f00021310e21cd3557aca78faf5cc6f5d))
+
 # [1.1.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.0.1...v1.1.0) (2023-10-02)
 
 
