@@ -1,3 +1,9 @@
+// Migrate built-in rules to @stylistic/js namespace
+/* eslint @stylistic/migrate/migrate-js: "error" */
+
+// Migrate `@typescript-eslint` rules to @stylistic/ts namespace
+/* eslint @stylistic/migrate/migrate-ts: "error" */
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -7,7 +13,8 @@ module.exports = {
 	},
 	extends: [
 		'standard-with-typescript',
-		'plugin:jsx-a11y/recommended'
+		'plugin:jsx-a11y/recommended',
+		'plugin:@stylistic/recommended-extends'
 	],
 	ignorePatterns: ['**/dist/*', '**/build/*', './main.js'],
 	parser: '@typescript-eslint/parser',
@@ -23,7 +30,8 @@ module.exports = {
 		'@typescript-eslint',
 		'typescript-sort-keys',
 		'import-newlines',
-		'jsx-a11y'
+		'jsx-a11y',
+		'@stylistic'
 	],
 	overrides: [
 		{
@@ -40,10 +48,13 @@ module.exports = {
 		}
 	],
 	rules: {
-		"@typescript-eslint/consistent-type-assertions": 0,
-		"no-return-assign": 'off',
-		'operator-linebreak': ['error', 'before'],
-		"key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+		'@typescript-eslint/consistent-type-assertions': 0,
+		'no-return-assign': 'off',
+		'@stylistic/operator-linebreak': ['error', 'before'],
+		'@stylistic/key-spacing': ['error', {
+			beforeColon: false,
+			afterColon: true
+		}],
 		'no-lonely-if': 'error',
 		'no-dupe-else-if': 'error',
 		'@typescript-eslint/ban-ts-comment': [
@@ -65,13 +76,13 @@ module.exports = {
 				requiredFirst: true
 			}
 		],
-		'newline-per-chained-call': ['error', {
+		'@stylistic/newline-per-chained-call': ['error', {
 			ignoreChainWithDepth: 2
 		}],
-		'object-property-newline': ['error', {
+		'@stylistic/object-property-newline': ['error', {
 			allowAllPropertiesOnSameLine: false
 		}],
-		'object-curly-newline': ['error', {
+		'@stylistic/object-curly-newline': ['error', {
 			ObjectExpression: {
 				minProperties: 1,
 				multiline: true
@@ -96,7 +107,7 @@ module.exports = {
 				forceSingleLine: true
 			}
 		],
-		'comma-dangle': ['error', 'never'],
+		'@stylistic/comma-dangle': ['error', 'never'],
 		'require-await': 'off',
 		'@typescript-eslint/require-await': 'error',
 		'@typescript-eslint/triple-slash-reference': ['error', {
@@ -104,38 +115,37 @@ module.exports = {
 			types: 'always',
 			lib: 'never'
 		}],
-		indent: 0,
-		'@typescript-eslint/indent': ['error', 'tab', {
+		'@stylistic/jsx-indent': ['error', 'tab'],
+		'@stylistic/jsx-indent-props': ['error', 'tab'],
+		'@stylistic/indent': ['error', 'tab', {
 			MemberExpression: 0,
 			SwitchCase: 1,
 			ignoredNodes: ['TSTypeParameterInstantiation']
 		}],
-		'no-tabs': 'off',
+		'@stylistic/indent-binary-ops': ['error', 'tab'],
+		'@stylistic/no-tabs': 'off',
 		'no-await-in-loop': ['error'],
-		'brace-style': ['error', 'stroustrup'],
+		'@stylistic/brace-style': ['error', 'stroustrup'],
 		'@typescript-eslint/strict-boolean-expressions': 0,
 		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 0,
 		'@typescript-eslint/explicit-function-return-type': 0,
-		'space-before-function-paren': 'off',
-		'@typescript-eslint/space-before-function-paren': 0,
+		'@stylistic/space-before-function-paren': 0,
 		'consistent-type-definitions': 'off',
 		'@typescript-eslint/consistent-type-definitions': 'off',
-		'space-in-parens': 'off',
-		semi: ["error", "always"],
-		'@typescript-eslint/semi': 'off',
-		'no-trailing-spaces': 'off',
+		'@stylistic/space-in-parens': 'off',
+		'@stylistic/semi': ['error', 'always'],
+		'@stylistic/no-trailing-spaces': 'off',
 		'@typescript-eslint/prefer-optional-chain': 'off',
 		'no-case-declarations': 'off',
 		'@typescript-eslint/promise-function-async': 'off',
-		'@typescript-eslint/brace-style': 'off',
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
-		'no-console': isProduction ? 'error' : 'off',
-		'no-empty-pattern': isProduction ? 'error' : 'warn',
-		'@typescript-eslint/no-unused-vars': isProduction ? 'error' : 'warn',
+		// 'no-console': isProduction ? 'error' : 'off',
+		// 'no-empty-pattern': isProduction ? 'error' : 'warn',
+		// '@typescript-eslint/no-unused-vars': isProduction ? 'error' : 'warn',
 		'prefer-promise-reject-errors': 'off',
 		'@typescript-eslint/no-extraneous-class': 'off',
-		'multiline-ternary': 'off',
+		'@stylistic/multiline-ternary': 'off',
 		'@typescript-eslint/no-misused-promises': [
 			'error',
 			{
@@ -143,6 +153,9 @@ module.exports = {
 				checksVoidReturn: false
 			}
 		],
+		'@stylistic/quote-props': ['error', 'as-needed'],
+		'@stylistic/type-generic-spacing': ['error'],
+		'@stylistic/type-named-tuple-spacing': ['error'],
 		'import/order': ['error', {
 			groups: [
 				['builtin', 'external'],
@@ -165,7 +178,11 @@ module.exports = {
 				order: 'asc',
 				caseInsensitive: false
 			}
-		}]
+		}],
+
+		'@typescript-eslint/unbound-method': ['error', {
+			ignoreStatic: false
+		}],
 	},
 	settings: {
 		'import/internal-regex': ['src/']
