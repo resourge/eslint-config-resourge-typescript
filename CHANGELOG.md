@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.2.0...v1.3.0) (2024-01-15)
+
+
+### Features
+
+* **package:** update packages ([f234a0c](https://github.com/resourge/eslint-config-resourge-typescript/commit/f234a0c1b04f9c8f52854c3689c041932ab160d3))
+
 # [1.2.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.1.0...v1.2.0) (2023-10-24)
 
 
