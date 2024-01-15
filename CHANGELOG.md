@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.3.0...v1.4.0) (2024-01-15)
+
+
+### Features
+
+* **eslint:** change from some eslint rules to [@stylistic](https://github.com/stylistic) ([98e1323](https://github.com/resourge/eslint-config-resourge-typescript/commit/98e132340d32123f59400f9a58c5fecbc1a18c53))
+
 # [1.3.0](https://github.com/resourge/eslint-config-resourge-typescript/compare/v1.2.0...v1.3.0) (2024-01-15)
 
 
